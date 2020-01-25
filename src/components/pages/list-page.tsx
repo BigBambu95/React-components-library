@@ -8,7 +8,7 @@ const ListPage = () => {
         <section className="list-page">
             <div>
                 <h4>Стандартный список</h4>
-                <List>
+                <List tag="div">
                     <ListItem>1л молока</ListItem>
                     <ListItem>Хлеб</ListItem>
                 </List>

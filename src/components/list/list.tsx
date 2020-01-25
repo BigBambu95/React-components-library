@@ -1,10 +1,15 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
 import classnames from 'classnames';
 
+export interface IList {
+    className?: string,
+    children: JSX.Element | JSX.Element[],
+    tag?: 'div' | 'ul'
+}
+
 const List = ({
-    children, tag: Tag, className, ...attrs
-}) => {
+    children, className, tag: Tag
+} : IList) : JSX.Element => {
 
     const classes = classnames(
         'list',
@@ -12,20 +17,18 @@ const List = ({
     );
 
     return(
-        <Tag className={classes} {...attrs}>
-            {children}
+        <Tag className={classes}>
+            {
+                React.Children.map(children, (child: JSX.Element) => {
+                    return React.cloneElement(child, {
+                        tag: Tag
+                    });
+                })
+            }
         </Tag>
     )
 }
 
-List.propTypes = {
-    children: PropTypes.node,
-    tag: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.func
-    ]),
-    className: PropTypes.string
-}
 
 List.defaultProps = {
     children: null,

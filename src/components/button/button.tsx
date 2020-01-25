@@ -19,11 +19,9 @@ export interface IButton extends React.ButtonHTMLAttributes<JSX.Element> {
 }
 
 const Button = ({ 
-    children, onClick, className, 
-    variant, size, active, 
-    disabled, rounded, icon,
-    loading, href, type 
-} : IButton) => {
+    children, onClick, className, variant, size, active, 
+    disabled, rounded, icon, loading, href, type 
+} : IButton) : JSX.Element => {
 
     const onClickAction = (e: any) => {
         if(disabled) {
