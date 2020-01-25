@@ -1,0 +1,29 @@
+.table-cell {
+    display: table-cell;
+    border-bottom: 1px solid rgba(224, 224, 224, 1);
+    font-size: 0.875rem;
+
+    &.medium {
+        padding: 1em;
+    }
+
+    &.small {
+        padding: .5em;
+    }
+
+    &.align-left {
+        text-align: left;
+    }
+
+    &.align-center {
+        text-align: center;
+    }
+
+    &.align-right {
+        text-align: right;
+    }
+
+    &.align-justify {
+        text-align: justify;
+    }
+}

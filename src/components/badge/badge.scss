@@ -1,0 +1,21 @@
+@import '../../colors.scss';
+
+.badge {
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 20px;
+    height: 20px;
+    padding: 0 5px;
+    background: $purpleColor;
+    font-size: .75rem;
+    color: #fff;
+
+    &.rounded {
+        border-radius: 10px;
+    }
+}

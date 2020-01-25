@@ -1,0 +1,17 @@
+@import '../../colors.scss';
+
+.tab-bar {
+    position: relative;
+
+    &__nav-panel {
+        position: relative;
+    }
+
+    &__indicator {
+        position: absolute;
+        bottom: 0;
+        height: 3px;
+        background: $purpleColor;
+        transition: .2s all ease-in-out;
+    }
+}

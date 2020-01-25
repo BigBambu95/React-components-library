@@ -1,0 +1,24 @@
+.tooltip {
+    z-index: 20;
+    position: absolute;
+    padding: .75em 1em;
+    border-radius: .5em;
+    background: rgba(0, 0, 0, .8);
+    color: #fff;
+    font-size: .7rem;
+
+    &.bottom,
+    &.top {
+        transform: translateX(-50%);
+    }
+
+    &.right {
+        transform: translateY(-50%);
+    }
+
+    &.left {
+        transform: translateX(-100%) translateY(-50%);
+    }
+}
+
+

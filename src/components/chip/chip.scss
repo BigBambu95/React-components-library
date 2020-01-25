@@ -1,0 +1,87 @@
+.chip {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 200px;
+    border: 1px solid #e0e0e0;
+    border-radius: 1em;
+    font-size: 0.8125rem;
+
+    &.contained {
+        background: #e0e0e0;
+    }
+
+    &.outlined {
+        background: none;
+    }
+
+    &.small {
+        height: 24px;
+        padding: .25em;
+
+        .chip__icon,
+        .chip__image {
+            width: 18px;
+            height: 18px;
+        }
+    }
+
+    &.medium {
+        height: 32px;
+        padding: .5em;
+    }
+
+    &__text {
+        padding: 0 .5em;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    &__icon,
+    &__image {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+    &.clickable {
+        user-select: none;
+    }
+
+    &.clickable:hover {
+        background: #B254AA;
+        border-color: #B254AA;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    &.clickable:active {
+        background:#7A1871;
+        border-color: #7A1871;
+        color: #fff;
+    }
+
+    &__close-btn {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 20px;
+        height: 20px;
+    }
+
+    &__close-btn:hover svg {
+        fill: #B254AA;
+    }
+
+    &__close-btn>svg {
+        fill: rgba(0, 0, 0, 0.26);
+    }
+
+    
+    &.clickable &__close-btn:hover svg {
+        fill: #fff;
+    }
+
+}

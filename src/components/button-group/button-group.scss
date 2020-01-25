@@ -1,0 +1,43 @@
+.btn-group {
+    display: inline-flex;
+
+    &>.btn:not(:first-child):not(:last-child) {
+        border-radius: 0;
+    }
+}
+
+.btn-group.horizontal {
+    flex-direction: row;
+
+    &>.btn:first-child {
+        border-right: 1px solid #B254AA;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    
+    &>.btn:last-child {
+        border-left: 1px solid #B254AA;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+}
+
+.btn-group.vertical {
+    flex-direction: column;
+
+    &>.btn:first-child {
+        border-bottom: 1px solid #B254AA;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    
+    &>.btn:last-child {
+        border-top: 1px solid #B254AA;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+}
+
+
+
+
