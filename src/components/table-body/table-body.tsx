@@ -2,9 +2,9 @@ import * as React from 'react';
 import classnames from 'classnames';
 
 export interface TableBodyProps {
-    children: JSX.Element,
-    className: string,
-    size: string
+    children: JSX.Element | JSX.Element[],
+    className?: string,
+    size?: 'small' | 'medium'
 }
 
 const TableBody = ({

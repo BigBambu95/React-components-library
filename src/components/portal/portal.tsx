@@ -1,11 +1,17 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
-class Portal extends React.Component<JSX.ElementClass> {
+export interface IPortal {
+    children: JSX.Element | JSX.Element[]
+}
+
+class Portal extends React.Component<IPortal> {
+
+    el: Node
+
     constructor() {
-        super(this.props);
-        this.el = el;
-        el = document.createElement('div');
+        super(null || undefined);
+        this.el = document.createElement('div');
     }
 
 
@@ -20,10 +26,9 @@ class Portal extends React.Component<JSX.ElementClass> {
     render() {
         const { children } = this.props;
 
-        return ReactDOM.createPortal(
-            children,
-            this.el
-        )
+        const el = this.el as Element;
+
+        return ReactDOM.createPortal(children, el);
     }
 
 }

@@ -1,37 +1,42 @@
 import * as React from 'react';
 import classnames from 'classnames';
 
-export interface TableProps {
+export interface ITableRow {
     children: JSX.Element | JSX.Element[],
     className: string,
+    head: boolean,
     size: 'small' | 'medium'
 }
 
-const Table = ({ children, className, size }: TableProps) => {
+const TableRow = ({
+    children, className, head, size
+} : ITableRow) : JSX.Element => {   
 
     const classes = classnames(
-        'table',
+        'table-row',
         className
     );
 
     return(
-        <table className={classes}>
+        <tr className={classes}>
             {
-                React.Children.map(children, (child: JSX.Element) => {
+                React.Children.map(children, child => {
                     return React.cloneElement(child, {
+                        head,
                         size
                     })
                 })
             }
-        </table>
+        </tr>
     )
 }
 
 
-Table.defaultProps = {
+TableRow.defaultProps = {
     children: null,
     className: '',
+    head: false,
     size: 'medium'
 }
 
-export default Table;
+export default TableRow;

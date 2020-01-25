@@ -3,12 +3,12 @@ import classnames from 'classnames';
 
 
 export interface ISvgIcon extends React.SVGAttributes<JSX.Element> {
-    Component: JSX.Element,
+    component: JSX.Element,
 }
 
 const SvgIcon = ({ 
-    Component, className, width, height, fill, viewBox 
-} : ISvgIcon) => {
+    component : Component, className, width, height, fill, viewBox 
+} : ISvgIcon) : JSX.Element => {
 
     const classes = classnames(
         'svg-icon',

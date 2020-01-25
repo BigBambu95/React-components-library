@@ -42,7 +42,7 @@ const Chip = ({
         { 'clickable': onClick }
     );
 
-    const renderIcon = icon && <div className="chip__icon"><SvgIcon Component={icon} width="100%" height="100%" /></div>;
+    const renderIcon = icon && <div className="chip__icon"><SvgIcon component={icon} width="100%" height="100%" /></div>;
     const renderImage = image && (
         <div className="chip__image">
             <Image 

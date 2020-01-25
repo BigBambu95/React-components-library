@@ -14,21 +14,21 @@ const BadgePage = () => {
             <div>
                 <h4>Обычный значок</h4>
                 <Button size="small" variant="icon" onClick={() => setCount(count + 1)}>
-                    <SvgIcon Component={MessageIcon} width="32" height="28" viewBox="0 0 24 24" />
+                    <SvgIcon component={MessageIcon} width="32" height="28" viewBox="0 0 24 24" />
                     <Badge value={count} />
                 </Button>
             </div>
             <div>
                 <h4>Круглый значок</h4>
                 <Button size="small" variant="icon" onClick={() => setCount(count + 1)}>
-                    <SvgIcon Component={MessageIcon} width="32" height="28" viewBox="0 0 24 24" />
+                    <SvgIcon component={MessageIcon} width="32" height="28" viewBox="0 0 24 24" />
                     <Badge value={count} rounded />
                 </Button>
             </div>
             <div>
                 <h4>Значок с текстом</h4>
                 <Button size="small" variant="icon">
-                    <SvgIcon Component={MessageIcon} width="32" height="28" viewBox="0 0 24 24" />
+                    <SvgIcon component={MessageIcon} width="32" height="28" viewBox="0 0 24 24" />
                     <Badge value="Sale" />
                 </Button>
             </div>

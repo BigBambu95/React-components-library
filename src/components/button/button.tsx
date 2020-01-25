@@ -13,7 +13,7 @@ export interface IButton extends React.ButtonHTMLAttributes<JSX.Element> {
     disabled?: boolean,
     rounded?: boolean,
     loading?: boolean,
-    icon?: boolean,
+    icon?: JSX.Element,
     href?: string,
     onClick?: any,
 }
@@ -43,7 +43,7 @@ const Button = ({
     );
 
     const Tag = href ? 'a' : 'button';
-    const renderIcon = icon && <span className="btn__icon"><SvgIcon Component={icon} width="100%" height="100%" viewBox="0 0 24 24" /></span>;
+    const renderIcon = icon && <span className="btn__icon"><SvgIcon component={icon} width="100%" height="100%" viewBox="0 0 24 24" /></span>;
     const label = !loading && <span>{children}</span>;
     const loader = loading && <div className="btn__spinner"></div>;
 
