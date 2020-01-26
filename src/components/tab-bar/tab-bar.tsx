@@ -2,9 +2,6 @@ import * as React from 'react';
 import classnames from 'classnames';
 import TabBarNav from '../tab-bar-nav';
 
-import { ITabBarItem } from '../tab-bar-item/tab-bar-item';
-
-
 export interface ITabBar {
     children: JSX.Element[],
     className?: string,
@@ -15,7 +12,7 @@ const TabBar = ({
     children, className, orientation
 } : ITabBar) : JSX.Element => {
 
-    const [activeTab, setActiveTab] = React.useState(getChildrenLabels(children)[0].props.label);
+    const [activeTab, setActiveTab] = React.useState(getChildrenLabels(children)[0]);
     const [indicatorCoords, setIndicatorCoords] = React.useState({ x: 0, width: 0 });
 
     const tabBarRef = React.useRef(null);
@@ -26,8 +23,8 @@ const TabBar = ({
         setIndicatorCoords({ x, width });
     }, []);
 
-    function getChildrenLabels(children : JSX.Element[]) : JSX.Element[] {
-        return children.map(({ props }) => props.label);
+    function getChildrenLabels(children : JSX.Element[]) : string[] {
+        return children.map(({ props } : JSX.Element) => props.label);
     }
 
     const classes = classnames(
@@ -41,8 +38,8 @@ const TabBar = ({
         width: indicatorCoords.width
     }
 
-    const renderTabs = () => {
-        return getChildrenLabels(children).map(({props} : JSX.Element) => {
+    const renderTabs = () : JSX.Element[] => {
+        return children.map(({ props } : JSX.Element) => {
             return(
                 <TabBarNav 
                     key={props.label} 
@@ -52,7 +49,7 @@ const TabBar = ({
                     setIndicatorCoords={setIndicatorCoords}
                 />
             )
-        })
+        });
     }
 
     return(
@@ -62,7 +59,7 @@ const TabBar = ({
                 <span className="tab-bar__indicator" style={tabBarIndicatorStyles}></span>
             </div>
             {
-                React.Children.map(children, child => {
+                React.Children.map(children, (child : JSX.Element) => {
                     return React.cloneElement(child, {
                         activeTab
                     })

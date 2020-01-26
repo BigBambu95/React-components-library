@@ -1,8 +1,7 @@
 import * as React from 'react';
 import classnames from 'classnames';
 
-import SvgIcon from '../svg-icon';
-import ArrowIcon from '../../icons/arrow.svg';
+const ArrowIcon = require('../../icons/arrow.svg');
 
 
 export interface ISelect {
@@ -55,7 +54,7 @@ const Select = ({
         <div className={classes} ref={container}>
             <div className="select__input" onClick={() => setIsOpen(!isOpen)}>
                 <span>{activeItem || defaultValue}</span>
-                <SvgIcon className="arrow-icon" component={ArrowIcon} viewBox="0 0 24 24" width="20" height="20" />
+                {/* TODO написать стрелочку на цсс */}
             </div>
             {selectList}
             <input type="hidden" value={activeItem} />

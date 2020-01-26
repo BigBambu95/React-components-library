@@ -96,6 +96,7 @@ a {
     margin-top: 2em;
 }
 
-.form-page>div {
+.form-page>div,
+.select-page .select {
     width: 250px;
 }

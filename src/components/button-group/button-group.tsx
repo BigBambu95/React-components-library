@@ -7,7 +7,7 @@ export interface IButtonGroup {
     className?: string,
 }
 
-const ButtonGroup = ({ ...attrs }, { children, orientation, className } : IButtonGroup) => {
+const ButtonGroup = ({ children, orientation, className } : IButtonGroup) : JSX.Element => {
 
     const classes = classnames(
         'btn-group',
@@ -18,7 +18,6 @@ const ButtonGroup = ({ ...attrs }, { children, orientation, className } : IButto
     return(
         <div 
             className={classes} 
-            {...attrs}
         >
             {children}
         </div>

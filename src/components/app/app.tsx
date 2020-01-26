@@ -21,11 +21,11 @@ const App = () => {
                     <Route path="/button" component={ButtonsPage} />
                     <Route path="/button-group" component={ButtonGroupPage} />
                     <Route path="/image" component={ImagePage} />
-                    {/* <Route path="/icon" component={IconPage} /> */}
+                    <Route path="/icon" component={IconPage} />
                     <Route path="/chip" component={ChipPage} />
                     <Route path="/badge" component={BadgePage} />
                     <Route path="/list" component={ListPage} />
-                    {/* <Route path="/tooltip" component={TooltipPage} /> */}
+                    <Route path="/tooltip" component={TooltipPage} />
                     <Route path="/table" component={TablePage} />
                     <Route path="/tabs" component={TabsPage} />
                     <Route path="/form" component={FormPage} />

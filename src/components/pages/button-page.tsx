@@ -1,13 +1,14 @@
 import * as React from 'react';
 import Button from '../button';
 
-import DeleteIcon from '../../icons/trash.svg';
+const DeleteIcon = require('../../icons/trash.svg');
 
 const ButtonsPage = () => {
 
     const click = () => console.log('click!');
 
     const send = () => console.log('sending...');
+
 
     return(
         <section className="buttons-page">
@@ -49,12 +50,12 @@ const ButtonsPage = () => {
                 <Button variant="contained">Открыть</Button>
                 <Button variant="contained" size="large">Открыть</Button>
             </div>
-            <div>
+            {/* <div>
                 <h4>Кнопка с иконкой и текстом</h4>
-                <Button variant="contained" icon={DeleteIcon} size="small">Удалить</Button>
-                <Button variant="contained" icon={DeleteIcon}>Удалить</Button>
-                <Button variant="contained" icon={DeleteIcon} size="large">Удалить</Button>
-            </div>
+                <Button variant="contained" size="small">Удалить</Button>
+                <Button variant="contained">Удалить</Button>
+                <Button variant="contained" size="large">Удалить</Button>
+            </div> */}
         </section>
     )
 };

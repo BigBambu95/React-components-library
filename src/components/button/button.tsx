@@ -1,9 +1,6 @@
 import * as React from 'react';
 import classnames from 'classnames';
 
-import SvgIcon from '../svg-icon';
-
-
 export interface IButton extends React.ButtonHTMLAttributes<JSX.Element> {
     children: JSX.Element | JSX.Element[] | string,
     className?: string,
@@ -13,14 +10,13 @@ export interface IButton extends React.ButtonHTMLAttributes<JSX.Element> {
     disabled?: boolean,
     rounded?: boolean,
     loading?: boolean,
-    icon?: JSX.Element,
     href?: string,
     onClick?: any,
 }
 
 const Button = ({ 
     children, onClick, className, variant, size, active, 
-    disabled, rounded, icon, loading, href, type 
+    disabled, rounded, loading, href, type 
 } : IButton) : JSX.Element => {
 
     const onClickAction = (e: any) => {
@@ -43,7 +39,6 @@ const Button = ({
     );
 
     const Tag = href ? 'a' : 'button';
-    const renderIcon = icon && <span className="btn__icon"><SvgIcon component={icon} width="100%" height="100%" viewBox="0 0 24 24" /></span>;
     const label = !loading && <span>{children}</span>;
     const loader = loading && <div className="btn__spinner"></div>;
 
@@ -52,9 +47,9 @@ const Button = ({
             type={type}
             className={classes} 
             onClick={onClickAction}
+            href={href}
             disabled={disabled}
         >
-            {renderIcon}
             {loader}
             {label}
         </Tag>
@@ -71,8 +66,7 @@ Button.defaultProps = {
     active: false,
     disabled: false,
     rounded: false,
-    href: '',
-    icon: null,
+    href: null,
     loading: false
 }
 

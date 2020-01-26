@@ -1,17 +1,16 @@
 import * as React from 'react';
-import SvgIcon from '../svg-icon';
-import MaleIcon from '../../icons/male.svg';
+import Icon from '../icon';
 
 const IconPage = () => {
     return(
         <section className="icon-page">
             <div>
-                <h4>Svg иконка без атрибутов</h4>
-                <SvgIcon component={MaleIcon} />
+                <h4>Иконка без атрибутов</h4>
+                <Icon name="male" />
             </div>
             <div>
-                <h4>Svg иконка с заданными размерами</h4>
-                <SvgIcon component={MaleIcon} width='128' height='128' />
+                <h4>Иконка с заданными размерами</h4>
+                <Icon name="male" />
             </div>
         </section>
     )

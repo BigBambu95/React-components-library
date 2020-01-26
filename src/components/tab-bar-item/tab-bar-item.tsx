@@ -4,8 +4,8 @@ import classnames from 'classnames';
 export interface ITabBarItem {
     children?: JSX.Element | JSX.Element[] | string,
     className?: string,
-    activeTab: string,
-    label: string
+    activeTab?: string,
+    label?: string
 }
 
 const TabBarItem = ({

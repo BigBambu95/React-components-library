@@ -1,16 +1,15 @@
 import * as React from 'react';
 import classnames from 'classnames';
 
-import SvgIcon from '../svg-icon';
 import Image from '../image';
-
+import Icon from '../icon';
 
 export interface IChip {
     children: JSX.Element | JSX.Element[] | string,
     variant?: string,
     className?: string,
     size?: string,
-    icon?: JSX.Element,
+    icon?: string,
     image?: string,
     imgAlt?: string,
     imgTitle?: string,
@@ -42,7 +41,7 @@ const Chip = ({
         { 'clickable': onClick }
     );
 
-    const renderIcon = icon && <div className="chip__icon"><SvgIcon component={icon} width="100%" height="100%" /></div>;
+    const renderIcon = icon && <div className="chip__icon"><Icon name={icon} /></div>;
     const renderImage = image && (
         <div className="chip__image">
             <Image 

@@ -1,13 +1,12 @@
 import * as React from 'react';
 import classnames from 'classnames';
-import { number } from 'prop-types';
 
 export interface ITooltip {
     children: JSX.Element | JSX.Element[],
-    className: string,
-    position: 'top' | 'right' | 'bottom' | 'left',
+    className?: string,
+    position?: 'top' | 'right' | 'bottom' | 'left',
     title: string,
-    gap: number,
+    gap?: number,
 }
 
 const Tooltip = ({

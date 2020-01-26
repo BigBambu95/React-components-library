@@ -8,7 +8,7 @@ const SelectPage = () => {
     const [value, setValue] = React.useState('');
 
     return(
-        <section>
+        <section className="select-page">
             <div>
                 <h4>Простой выпадающий список</h4>
                 <Select>

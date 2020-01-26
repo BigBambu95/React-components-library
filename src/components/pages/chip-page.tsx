@@ -1,8 +1,7 @@
 import * as React from 'react';
 import Chip from '../chip';
 
-import MaleIcon from '../../icons/male.svg';
-import Avatar from '../../images/avatar.jpg';
+const Avatar = require('../../images/avatar.jpg');
 
 const ChipPage = () => {
 
@@ -38,12 +37,12 @@ const ChipPage = () => {
             <div>
                 <h4>Фишка с иконкой</h4>
                 <div>
-                    <Chip icon={MaleIcon}>BigBambu</Chip>
-                    <Chip icon={MaleIcon} variant="outlined">BigBambu</Chip>
+                    {/* <Chip icon={MaleIcon}>BigBambu</Chip>
+                    <Chip icon={MaleIcon} variant="outlined">BigBambu</Chip> */}
                 </div>
                 <div>
-                    <Chip icon={MaleIcon} size="small">BigBambu</Chip>
-                    <Chip icon={MaleIcon} variant="outlined" size="small">BigBambu</Chip>
+                    {/* <Chip icon={MaleIcon} size="small">BigBambu</Chip>
+                    <Chip icon={MaleIcon} variant="outlined" size="small">BigBambu</Chip> */}
                 </div>
             </div>
             <div>
@@ -64,7 +63,7 @@ const ChipPage = () => {
                     <Chip onClick={click} variant="outlined">React</Chip>
                 </div>
                 <div>
-                    <Chip icon={MaleIcon} onClick={click}>BigBambu</Chip>
+                    {/* <Chip icon={MaleIcon} onClick={click}>BigBambu</Chip> */}
                     <Chip image={Avatar} onClick={click}>BigBambu</Chip>
                 </div>
             </div>
@@ -75,14 +74,14 @@ const ChipPage = () => {
                     <Chip variant="outlined"  onClose={close}>React</Chip>
                 </div>
                 <div>
-                    <Chip icon={MaleIcon} onClose={close}>BigBambu</Chip>
+                    {/* <Chip icon={MaleIcon} onClose={close}>BigBambu</Chip> */}
                     <Chip image={Avatar} onClose={close}>BigBambu</Chip>
                 </div>
             </div>
             <div>
                 <h4>Полный фарш</h4>
                 <div>
-                    <Chip icon={MaleIcon} onClose={close} onClick={click}>BigBambu</Chip>
+                    {/* <Chip icon={MaleIcon} onClose={close} onClick={click}>BigBambu</Chip> */}
                     <Chip image={Avatar} onClose={close} onClick={click}>BigBambu</Chip>
                 </div>
             </div>

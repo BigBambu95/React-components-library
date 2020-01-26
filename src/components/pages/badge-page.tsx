@@ -1,9 +1,9 @@
 import * as React from 'react';
 
 import Button from '../button';
-import SvgIcon from '../svg-icon';
-import MessageIcon from '../../icons/message.svg';
 import Badge from '../badge';
+import Icon from '../icon';
+
 
 const BadgePage = () => {
 
@@ -14,21 +14,21 @@ const BadgePage = () => {
             <div>
                 <h4>Обычный значок</h4>
                 <Button size="small" variant="icon" onClick={() => setCount(count + 1)}>
-                    <SvgIcon component={MessageIcon} width="32" height="28" viewBox="0 0 24 24" />
+                    <Icon name="envelope" />
                     <Badge value={count} />
                 </Button>
             </div>
             <div>
                 <h4>Круглый значок</h4>
                 <Button size="small" variant="icon" onClick={() => setCount(count + 1)}>
-                    <SvgIcon component={MessageIcon} width="32" height="28" viewBox="0 0 24 24" />
+                    <Icon name="envelope" />
                     <Badge value={count} rounded />
                 </Button>
             </div>
             <div>
                 <h4>Значок с текстом</h4>
                 <Button size="small" variant="icon">
-                    <SvgIcon component={MessageIcon} width="32" height="28" viewBox="0 0 24 24" />
+                    <Icon name="envelope" />
                     <Badge value="Sale" />
                 </Button>
             </div>
