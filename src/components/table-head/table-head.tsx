@@ -1,15 +1,15 @@
 import * as React from 'react';
 import classnames from 'classnames';
 
-export interface ITableHead {
-    children: JSX.Element | JSX.Element[],
-    className: string,
-    size: 'small' | 'medium'
+export interface TableHeadProps {
+    children: JSX.Element | JSX.Element[];
+    className: string;
+    size: 'small' | 'medium';
 }
 
 const TableHead = ({
     children, className, size
-} : ITableHead) : JSX.Element => {
+}: TableHeadProps): JSX.Element => {
 
     const classes = classnames(
         'table-head',

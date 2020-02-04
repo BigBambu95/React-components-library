@@ -1,19 +1,19 @@
 import * as React from 'react';
 import classnames from 'classnames';
 
-export interface ITableCell {
-    children: JSX.Element | string,
-    className?: string,
-    tag?: 'th' | 'td',
-    align?: 'left' | 'center' | 'right' | 'justify',
-    size?: 'small' | 'medium',
-    head?: boolean
+export interface TableCellProps {
+    children: JSX.Element | string;
+    className?: string;
+    tag?: 'th' | 'td';
+    align?: 'left' | 'center' | 'right' | 'justify';
+    size?: 'small' | 'medium';
+    head?: boolean;
 }
 
 const TableCell = ({
     children, className, head, 
     tag: Tag, align, size
-} : ITableCell) : JSX.Element => {
+}: TableCellProps): JSX.Element => {
 
     const classes = classnames(
         'table-cell',

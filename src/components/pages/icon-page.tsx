@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Icon from '../icon';
 
-const IconPage = () => {
+const IconPage = (): JSX.Element => {
     return(
         <section className="icon-page">
             <div>

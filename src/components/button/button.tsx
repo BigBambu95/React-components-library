@@ -1,25 +1,25 @@
 import * as React from 'react';
 import classnames from 'classnames';
 
-export interface IButton extends React.ButtonHTMLAttributes<JSX.Element> {
-    children: JSX.Element | JSX.Element[] | string,
-    className?: string,
-    variant?: string,
-    size?: string,
-    active?: boolean,
-    disabled?: boolean,
-    rounded?: boolean,
-    loading?: boolean,
-    href?: string,
-    onClick?: any,
+export interface ButtonProps extends React.ButtonHTMLAttributes<JSX.Element> {
+    children: JSX.Element | JSX.Element[] | string;
+    className?: string;
+    variant?: string;
+    size?: string;
+    active?: boolean;
+    disabled?: boolean;
+    rounded?: boolean;
+    loading?: boolean;
+    href?: string;
+    onClick?: any;
 }
 
 const Button = ({ 
     children, onClick, className, variant, size, active, 
     disabled, rounded, loading, href, type 
-} : IButton) : JSX.Element => {
+}: ButtonProps): JSX.Element => {
 
-    const onClickAction = (e: any) => {
+    const onClickAction = (e: any): void => {
         if(disabled) {
             e.preventDefault();
         } else {
@@ -59,7 +59,7 @@ const Button = ({
 
 Button.defaultProps = {
     children: 'Button',
-    onClick: () => {},
+    onClick: (a: any): void => a,
     className: '',
     variant: 'text',
     size: '',

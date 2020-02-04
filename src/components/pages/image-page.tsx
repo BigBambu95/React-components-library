@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import Image from '../image';
 
-const ImagePage = () => {
+const ImagePage = (): JSX.Element => {
     return(
         <section className="image-page">
             <div>

@@ -2,14 +2,14 @@ import * as React from 'react';
 import classnames from 'classnames';
 
 export interface TableBodyProps {
-    children: JSX.Element | JSX.Element[],
-    className?: string,
-    size?: 'small' | 'medium'
+    children: JSX.Element | JSX.Element[];
+    className?: string;
+    size?: 'small' | 'medium';
 }
 
 const TableBody = ({
     children, className, size
-} : TableBodyProps) => {
+}: TableBodyProps): JSX.Element => {
 
     const classes = classnames(
         'table-body',

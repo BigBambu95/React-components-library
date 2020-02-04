@@ -3,14 +3,14 @@ import classnames from 'classnames';
 
 import '../../fontawesome.min.css';
 
-export interface IIcon {
-    name: string,
-    className?: string
+export interface IconProps {
+    name: string;
+    className?: string;
 }
 
 const Icon = ({
    name, className,
-} : IIcon) : JSX.Element => {
+}: IconProps): JSX.Element => {
 
     const classes = classnames(
         'fas',

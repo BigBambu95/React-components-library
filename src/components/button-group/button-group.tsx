@@ -1,13 +1,13 @@
 import * as React from 'react';
 import classnames from 'classnames';
 
-export interface IButtonGroup {
-    children: JSX.Element[],
-    orientation?: 'horizontal' | 'vertical',
-    className?: string,
+export interface ButtonGroupProps {
+    children: JSX.Element[];
+    orientation?: 'horizontal' | 'vertical';
+    className?: string;
 }
 
-const ButtonGroup = ({ children, orientation, className } : IButtonGroup) : JSX.Element => {
+const ButtonGroup = ({ children, orientation, className }: ButtonGroupProps): JSX.Element => {
 
     const classes = classnames(
         'btn-group',

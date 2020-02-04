@@ -1,7 +1,7 @@
 import * as React from 'react';
 import TextField from '../text-field';
 
-const FormPage = () => {
+const FormPage = (): JSX.Element => {
 
     const [username, setUsername] = React.useState('');
 
@@ -21,7 +21,7 @@ const FormPage = () => {
             </div>
             <div>
                 <h4>Контролируемое поле </h4>
-                <TextField name="username" htmlId="username2" label="Имя" onChange={((e) => setUsername(e.target.value))} value={username} required />
+                <TextField name="username" htmlId="username2" label="Имя" onChange={((e): void => setUsername(e.target.value))} value={username} required />
                 <p>{username}</p>
             </div>
         </section>

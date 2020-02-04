@@ -3,7 +3,7 @@ import * as React from 'react';
 import Select from '../select';
 import SelectItem from '../select-item';
 
-const SelectPage = () => {
+const SelectPage = (): JSX.Element => {
 
     const [value, setValue] = React.useState('');
 

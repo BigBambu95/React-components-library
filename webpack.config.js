@@ -26,12 +26,25 @@ const webpackConfig = {
     module: {
         rules: [
             {
+                test: /\.(ts|tsx)$/,
+                enforce: 'pre',
+                use: [
+                    {
+                        options: {
+                            eslintPath: require.resolve('eslint'),
+                        },
+                        loader: require.resolve('eslint-loader'),
+                    }
+                ],
+                exclude: /(node_modules|bower_components)/
+            },
+            {
                 test: /\.js$/,
                 exclude: /(node_modules|bower_components)/,
                 use: ['babel-loader']
             },
             {
-                test: /\.tsx?$/,
+                test: /\.(ts|tsx)$/,
                 use: ['ts-loader'],
                 exclude: /(node_modules|bower_components)/,
             },

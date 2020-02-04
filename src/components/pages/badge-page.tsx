@@ -5,7 +5,7 @@ import Badge from '../badge';
 import Icon from '../icon';
 
 
-const BadgePage = () => {
+const BadgePage = (): JSX.Element => {
 
     const [count, setCount] = React.useState(5);
 

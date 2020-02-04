@@ -1,13 +1,12 @@
 import * as React from 'react';
 import Button from '../button';
 
-const DeleteIcon = require('../../icons/trash.svg');
 
-const ButtonsPage = () => {
+const ButtonsPage = (): JSX.Element => {
 
-    const click = () => console.log('click!');
+    const click = (): void => console.log('click!');
 
-    const send = () => console.log('sending...');
+    const send = (): void => console.log('sending...');
 
 
     return(

@@ -4,31 +4,31 @@ import classnames from 'classnames';
 import Image from '../image';
 import Icon from '../icon';
 
-export interface IChip {
-    children: JSX.Element | JSX.Element[] | string,
-    variant?: string,
-    className?: string,
-    size?: string,
-    icon?: string,
-    image?: string,
-    imgAlt?: string,
-    imgTitle?: string,
-    onClick?: any,
-    onClose?: any,
-    id?: string | number | symbol
+export interface ChipProps {
+    children: JSX.Element | JSX.Element[] | string;
+    variant?: string;
+    className?: string;
+    size?: string;
+    icon?: string;
+    image?: string;
+    imgAlt?: string;
+    imgTitle?: string;
+    onClick?: any;
+    onClose?: any;
+    id?: string | number | symbol;
 }
 
 const Chip = ({
     children, variant, className, 
     size, icon, image, imgAlt, imgTitle, 
     onClick, onClose, id
-} : IChip) : JSX.Element => {
+}: ChipProps): JSX.Element => {
 
-    const onClickAction = () : void => {
+    const onClickAction = (): void => {
         onClick(id);
     }
 
-    const onCloseAction = (e : any) : void => {
+    const onCloseAction = (e: any): void => {
         e.stopPropagation();
         onClose(e, id);
     } 

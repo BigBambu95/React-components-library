@@ -7,11 +7,12 @@ import {
     ImagePage, IconPage, ChipPage, 
     BadgePage, ListPage, TooltipPage, 
     TablePage, TabsPage, SelectPage,
-    FormPage
+    FormPage,
+    DropdownPage
 } from '../pages';
 
 
-const App = () => {
+const App = (): JSX.Element => {
     return(
         <div className="app">
             <NavPanel />
@@ -30,6 +31,7 @@ const App = () => {
                     <Route path="/tabs" component={TabsPage} />
                     <Route path="/form" component={FormPage} />
                     <Route path="/select" component={SelectPage} />
+                    <Route path="/dropdown" component={DropdownPage} />
                 </Switch>
             </main>
         </div>

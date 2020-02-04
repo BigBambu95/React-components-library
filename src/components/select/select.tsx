@@ -1,41 +1,37 @@
 import * as React from 'react';
 import classnames from 'classnames';
 
-const ArrowIcon = require('../../icons/arrow.svg');
-
-
-export interface ISelect {
-    children: JSX.Element[] | JSX.Element,
-    className?: string,
-    defaultValue?: string | number,
-    setValue?: any,
-    disabled?: boolean
+export interface SelectProps {
+    children: JSX.Element[] | JSX.Element;
+    className?: string;
+    defaultValue?: string | number;
+    setValue?: any;
+    disabled?: boolean;
 }
 
 const Select = ({
     className, children, defaultValue,
     setValue, disabled
-} : ISelect) : JSX.Element => {
+}: SelectProps): JSX.Element => {
 
     const container = React.useRef(null);
 
     const [isOpen, setIsOpen] = React.useState(false);
     const [activeItem, setActiveItem] = React.useState('');
 
-    
-    React.useEffect(() => {
-        window.addEventListener('click', onClickOutsideHandler);
-
-        return function cleanup() {
-            window.removeEventListener('click', onClickOutsideHandler);
-        }
-    });
-
-    function onClickOutsideHandler(e: any) {
+    function onClickOutsideHandler(e: Event): void {
         if(isOpen && !container.current.contains(e.target)) {
             setIsOpen(false);
         }
     }
+    
+    React.useEffect(() => {
+        window.addEventListener('click', onClickOutsideHandler);
+
+        return function cleanup(): void {
+            window.removeEventListener('click', onClickOutsideHandler);
+        }
+    });
 
     const classes = classnames(
         'select',
@@ -52,9 +48,9 @@ const Select = ({
 
     return(
         <div className={classes} ref={container}>
-            <div className="select__input" onClick={() => setIsOpen(!isOpen)}>
+            <div className="select__input" onClick={(): void => setIsOpen(!isOpen)}>
                 <span>{activeItem || defaultValue}</span>
-                {/* TODO написать стрелочку на цсс */}
+                <span className="select__arrow"></span>
             </div>
             {selectList}
             <input type="hidden" value={activeItem} />
@@ -66,7 +62,7 @@ Select.defaultProps = {
     children: null,
     className: '',
     defaultValue: 'Выберите',
-    setValue: () => {}
+    setValue: (a: any): void => a
 }
 
 

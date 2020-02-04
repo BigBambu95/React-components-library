@@ -3,7 +3,7 @@ import ButtonGroup from '../button-group';
 import Button from '../button';
 
 
-const ButtonGroupPage = () => {
+const ButtonGroupPage = (): JSX.Element => {
     return(
         <section className="button-groups-page">
             <div>

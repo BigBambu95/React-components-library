@@ -1,16 +1,16 @@
 import * as React from 'react';
 import classnames from 'classnames';
 
-export interface ITabBarItem {
-    children?: JSX.Element | JSX.Element[] | string,
-    className?: string,
-    activeTab?: string,
-    label?: string
+export interface TabBarItemProps {
+    children?: JSX.Element | JSX.Element[] | string;
+    className?: string;
+    activeTab?: string;
+    label?: string;
 }
 
 const TabBarItem = ({
     children, className, activeTab, label
-} : ITabBarItem) : JSX.Element => {
+}: TabBarItemProps): JSX.Element => {
 
     const classes = classnames(
         'tab-bar-item',

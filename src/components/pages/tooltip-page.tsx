@@ -3,7 +3,7 @@ import * as React from 'react';
 import Button from '../button';
 import Tooltip from '../tooltip';
 
-const TooltipPage = () => {
+const TooltipPage = (): JSX.Element => {
     return(
         <section className="tooltip-page">
             <div>

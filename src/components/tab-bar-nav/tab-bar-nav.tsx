@@ -1,21 +1,21 @@
 import * as React from 'react';
 import classnames from 'classnames';
 
-export interface ITabBarNav {
-    label: string,
-    className?: string,
-    activeTab: string,
-    disabled?: boolean,
-    setActiveTab: any,
-    setIndicatorCoords: any
+export interface TabBarNavProps {
+    label: string;
+    className?: string;
+    activeTab: string;
+    disabled?: boolean;
+    setActiveTab: any;
+    setIndicatorCoords: any;
 }
 
 const TabBarNav = ({
     label, className, activeTab,
     disabled, setActiveTab, setIndicatorCoords
-} : ITabBarNav) : JSX.Element => {
+}: TabBarNavProps): JSX.Element => {
 
-    const getCoords = (e : any) => {
+    const getCoords = (e: any): void => {
         const width = e.target.offsetWidth;
         const x = e.target.offsetLeft;
         setIndicatorCoords({
@@ -24,7 +24,7 @@ const TabBarNav = ({
         })
     }
 
-    const handleClick = (e : any) => {
+    const handleClick = (e: Event): any => {
         setActiveTab(label);
         getCoords(e);
     }
@@ -40,7 +40,7 @@ const TabBarNav = ({
         <button 
             className={classes} 
             role="tab"
-            onClick={(e) => handleClick(e)}
+            onClick={(e: any): void => handleClick(e)}
         >
             {label}
         </button>
@@ -51,8 +51,8 @@ TabBarNav.defaultProps = {
     label: '',
     className: '',
     icon: null,
-    setActiveTab: () => {},
-    setIndicatorCoords: () => {}
+    setActiveTab: null,
+    setIndicatorCoords: null
 }
  
 export default TabBarNav;

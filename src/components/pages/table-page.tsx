@@ -5,15 +5,15 @@ import TableRow from '../table-row';
 import TableCell from '../table-cell';
 import TableBody from '../table-body';
 
-export interface ITableData {
-    name: string,
-    calories: string,
-    fat: string,
-    carbs: string,
-    protein: string
+export interface TableDataProps {
+    name: string;
+    calories: string;
+    fat: string;
+    carbs: string;
+    protein: string;
 }
 
-function createData(name : string, calories : number, fat : number, carbs : number, protein : number) : object {
+function createData(name: string, calories: number, fat: number, carbs: number, protein: number): object {
     return { name, calories, fat, carbs, protein };
   }
 
@@ -25,7 +25,7 @@ const data = [
     createData('Gingerbread', 356, 16.0, 49, 3.9),
 ];
 
-const TablePage = () => {
+const TablePage = (): JSX.Element => {
     return(
         <section className="table-page">
             <div>
@@ -42,7 +42,7 @@ const TablePage = () => {
                     </TableHead>
                     <TableBody>
                         {
-                            data.map((row : ITableData, idx : number) : JSX.Element => {
+                            data.map((row: TableDataProps, idx: number): JSX.Element => {
                                 return(
                                     <TableRow key={idx}>
                                         <TableCell tag="th">{row.name}</TableCell>
@@ -71,7 +71,7 @@ const TablePage = () => {
                     </TableHead>
                     <TableBody>
                         {
-                            data.map((row : ITableData, idx : number) => {
+                            data.map((row: TableDataProps, idx: number) => {
                                 return(
                                     <TableRow key={idx}>
                                         <TableCell tag="th">{row.name}</TableCell>

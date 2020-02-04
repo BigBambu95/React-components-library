@@ -2,18 +2,18 @@ import * as React from 'react';
 import classnames from 'classnames';
 
 
-export interface ITextField {
-    className?: string,
-    htmlId?: string,
-    name: string,
-    type?: string,
-    autoComplete?: 'off' | 'on',
-    label?: string,
-    size?: 'normal' | 'small',
-    value?: number | string | [],
-    disabled?: boolean,
-    onChange?: React.EventHandler<any>,
-    required?: boolean
+export interface TextFieldProps {
+    className?: string;
+    htmlId?: string;
+    name: string;
+    type?: string;
+    autoComplete?: 'off' | 'on';
+    label?: string;
+    size?: 'normal' | 'small';
+    value?: number | string | [];
+    disabled?: boolean;
+    onChange?: React.EventHandler<any>;
+    required?: boolean;
 }
 
 const TextField = ({
@@ -21,7 +21,7 @@ const TextField = ({
     label, size, autoComplete,
     value, disabled, onChange,
     required, htmlId
-} : ITextField) : JSX.Element => {
+}: TextFieldProps): JSX.Element => {
 
     const [filled, setFilled] = React.useState(false);
 
@@ -33,7 +33,7 @@ const TextField = ({
         { disabled }
     )
 
-    const handleChange = (e: any) => {
+    const handleChange = (e: any): void => {
         if(e.target.value.length > 0) {
             setFilled(true);
         } else {
@@ -71,7 +71,7 @@ TextField.defaultProps = {
     autoComplete: 'off',
     disabled: false,
     required: false,
-    onChange: () => {}
+    onChange: null
 }
 
 

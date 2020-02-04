@@ -1,10 +1,10 @@
-interface IRoutes {
-    id: number,
-    path: string,
-    text: string
+interface RoutesProps {
+    id: number;
+    path: string;
+    text: string;
 }
 
-const routes: Array<IRoutes> = [
+const routes: Array<RoutesProps> = [
     {
         id: 1,
         path: '/',
@@ -69,6 +69,11 @@ const routes: Array<IRoutes> = [
         id: 13,
         path: '/select',
         text: 'Select'
+    },
+    {
+        id: 14,
+        path: '/dropdown',
+        text: 'Dropdown'
     }
 ];
 

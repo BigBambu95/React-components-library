@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 
-const HomePage = () => {
+const HomePage = (): JSX.Element => {
     return(
         <section>
             Главная страница

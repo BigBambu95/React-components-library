@@ -3,7 +3,7 @@ import * as React from 'react';
 import List from '../list';
 import ListItem from '../list-item';
 
-const ListPage = () => {
+const ListPage = (): JSX.Element => {
     return(
         <section className="list-page">
             <div>

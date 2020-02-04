@@ -1,13 +1,13 @@
 import * as React from 'react';
 import classnames from 'classnames';
 
-export interface IBadge {
-    value: string | number,
-    className?: string,
-    rounded?: boolean
+export interface BadgeProps {
+    value: string | number;
+    className?: string;
+    rounded?: boolean;
 }
 
-const Badge = ({ value, className, rounded } : IBadge) => {
+const Badge = ({ value, className, rounded }: BadgeProps): JSX.Element => {
 
     const classes = classnames(
         'badge',

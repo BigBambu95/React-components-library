@@ -1,16 +1,16 @@
 import * as React from 'react';
 import classnames from 'classnames';
 
-export interface ITableRow {
-    children: JSX.Element | JSX.Element[],
-    className: string,
-    head: boolean,
-    size: 'small' | 'medium'
+export interface TableRowProps {
+    children: JSX.Element | JSX.Element[];
+    className: string;
+    head: boolean;
+    size: 'small' | 'medium';
 }
 
 const TableRow = ({
     children, className, head, size
-} : ITableRow) : JSX.Element => {   
+}: TableRowProps): JSX.Element => {   
 
     const classes = classnames(
         'table-row',

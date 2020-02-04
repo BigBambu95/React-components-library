@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import routes from '../../routes';
 
 
-const NavPanel = () => {
+const NavPanel = (): JSX.Element => {
     return(
         <aside className="nav-panel">
             {

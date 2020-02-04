@@ -1,12 +1,11 @@
 import * as React from 'react';
 import Chip from '../chip';
 
-const Avatar = require('../../images/avatar.jpg');
 
 const ChipPage = () => {
 
-    const click = () : any => alert('clicked');
-    const close = () : any => alert('closed');
+    const click = (): void => alert('clicked');
+    const close = (): void => alert('closed');
 
     return(
         <section className="chip-page">
@@ -45,7 +44,7 @@ const ChipPage = () => {
                     <Chip icon={MaleIcon} variant="outlined" size="small">BigBambu</Chip> */}
                 </div>
             </div>
-            <div>
+            {/* <div>
                 <h4>Фишка с картинкой</h4>
                 <div>
                     <Chip image={Avatar}>BigBambu</Chip>
@@ -55,7 +54,7 @@ const ChipPage = () => {
                     <Chip image={Avatar} size="small">BigBambu</Chip>
                     <Chip image={Avatar} variant="outlined" size="small">BigBambu</Chip>
                 </div>
-            </div>
+            </div> */}
             <div>
                 <h4>Кликабельная фишка</h4>
                 <div>
@@ -64,7 +63,7 @@ const ChipPage = () => {
                 </div>
                 <div>
                     {/* <Chip icon={MaleIcon} onClick={click}>BigBambu</Chip> */}
-                    <Chip image={Avatar} onClick={click}>BigBambu</Chip>
+                    {/* <Chip image={Avatar} onClick={click}>BigBambu</Chip> */}
                 </div>
             </div>
             <div>
@@ -75,14 +74,14 @@ const ChipPage = () => {
                 </div>
                 <div>
                     {/* <Chip icon={MaleIcon} onClose={close}>BigBambu</Chip> */}
-                    <Chip image={Avatar} onClose={close}>BigBambu</Chip>
+                    {/* <Chip image={Avatar} onClose={close}>BigBambu</Chip> */}
                 </div>
             </div>
             <div>
                 <h4>Полный фарш</h4>
                 <div>
                     {/* <Chip icon={MaleIcon} onClose={close} onClick={click}>BigBambu</Chip> */}
-                    <Chip image={Avatar} onClose={close} onClick={click}>BigBambu</Chip>
+                    {/* <Chip image={Avatar} onClose={close} onClick={click}>BigBambu</Chip> */}
                 </div>
             </div>
         </section>

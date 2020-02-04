@@ -2,23 +2,23 @@ import * as React from 'react';
 import classnames from 'classnames';
 
 
-export interface ISelectItem {
-    children: string,
-    className?: string,
-    value?: string,
-    setActiveItem: any,
-    setIsOpen: any,
-    setValue?: any,
-    disabled?: boolean
+export interface SelectItemProps {
+    children: string;
+    className?: string;
+    value?: string;
+    setActiveItem: any;
+    setIsOpen: any;
+    setValue?: any;
+    disabled?: boolean;
 }
 
 const SelectItem = ({
     children, className, value,
     setActiveItem, setIsOpen,
     setValue, disabled
-} : ISelectItem) : JSX.Element => {
+}: SelectItemProps): JSX.Element => {
 
-    const onClickAction = () => {
+    const onClickAction = (): void => {
         setActiveItem(value);
         setValue(value);
         setIsOpen(false);
@@ -46,9 +46,9 @@ SelectItem.defaultProps = {
     children: '',
     className: '',
     disabled: false,
-    setActiveItem: () => {},
-    setIsOpen: () => {},
-    setValue: () => {}
+    setActiveItem: null,
+    setIsOpen: null,
+    setValue: null
 }
 
 export default SelectItem;

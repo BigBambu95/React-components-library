@@ -3,7 +3,7 @@ import TabBar from '../tab-bar';
 import TabBarItem from '../tab-bar-item';
 import Image from '../image';
 
-const TabsPage = () => {
+const TabsPage = (): JSX.Element => {
     return(
         <section>
             <div>

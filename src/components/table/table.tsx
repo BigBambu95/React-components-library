@@ -2,12 +2,12 @@ import * as React from 'react';
 import classnames from 'classnames';
 
 export interface TableProps {
-    children: JSX.Element | JSX.Element[],
-    className: string,
-    size: 'small' | 'medium'
+    children: JSX.Element | JSX.Element[];
+    className: string;
+    size: 'small' | 'medium';
 }
 
-const Table = ({ children, className, size }: TableProps) => {
+const Table = ({ children, className, size }: TableProps): JSX.Element => {
 
     const classes = classnames(
         'table',

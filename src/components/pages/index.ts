@@ -11,6 +11,7 @@ import TablePage from './table-page';
 import TabsPage from './tabs-page';
 import SelectPage from './select-page';
 import FormPage from './form-page';
+import DropdownPage from './dropdown-page';
 
 export {
     ButtonsPage,
@@ -25,5 +26,6 @@ export {
     TablePage,
     TabsPage,
     SelectPage,
-    FormPage
+    FormPage,
+    DropdownPage
 }

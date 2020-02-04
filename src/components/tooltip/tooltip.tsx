@@ -1,18 +1,18 @@
 import * as React from 'react';
 import classnames from 'classnames';
 
-export interface ITooltip {
-    children: JSX.Element | JSX.Element[],
-    className?: string,
-    position?: 'top' | 'right' | 'bottom' | 'left',
-    title: string,
-    gap?: number,
+export interface TooltipProps {
+    children: JSX.Element | JSX.Element[];
+    className?: string;
+    position?: 'top' | 'right' | 'bottom' | 'left';
+    title: string;
+    gap?: number;
 }
 
 const Tooltip = ({
     children, className, position, 
     title, gap
-} : ITooltip) : JSX.Element => {
+}: TooltipProps): JSX.Element => {
 
     const [visible, setVisibility] = React.useState(false);
     const [coords, setCoords] = React.useState({
@@ -22,13 +22,13 @@ const Tooltip = ({
         height: 0
     });
 
-    const show = (e: any) : void => {
+    const show = (e: any): void => {
         const elCoords = e.target.getBoundingClientRect();
         setCoords(elCoords);
         setVisibility(true);
     }
 
-    const hide = () : void => {
+    const hide = (): void => {
         setVisibility(false);
     }
 
@@ -38,7 +38,7 @@ const Tooltip = ({
         position
     );
 
-    const styles = () : React.CSSProperties => {
+    const styles = (): React.CSSProperties => {
         switch(position) {
             case 'bottom':
                 return {

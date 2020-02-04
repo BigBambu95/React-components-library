@@ -2,15 +2,19 @@ import * as React from 'react';
 import classnames from 'classnames';
 import TabBarNav from '../tab-bar-nav';
 
-export interface ITabBar {
-    children: JSX.Element[],
-    className?: string,
-    orientation?: 'horizontal' | 'vertical'
+export interface TabBarProps {
+    children: JSX.Element[];
+    className?: string;
+    orientation?: 'horizontal' | 'vertical';
 }
 
 const TabBar = ({
     children, className, orientation
-} : ITabBar) : JSX.Element => {
+}: TabBarProps): JSX.Element => {
+
+    function getChildrenLabels(children: JSX.Element[]): string[] {
+        return children.map(({ props }: JSX.Element) => props.label);
+    }
 
     const [activeTab, setActiveTab] = React.useState(getChildrenLabels(children)[0]);
     const [indicatorCoords, setIndicatorCoords] = React.useState({ x: 0, width: 0 });
@@ -23,10 +27,6 @@ const TabBar = ({
         setIndicatorCoords({ x, width });
     }, []);
 
-    function getChildrenLabels(children : JSX.Element[]) : string[] {
-        return children.map(({ props } : JSX.Element) => props.label);
-    }
-
     const classes = classnames(
         'tab-bar',
         className,
@@ -38,8 +38,8 @@ const TabBar = ({
         width: indicatorCoords.width
     }
 
-    const renderTabs = () : JSX.Element[] => {
-        return children.map(({ props } : JSX.Element) => {
+    const renderTabs = (): JSX.Element[] => {
+        return children.map(({ props }: JSX.Element) => {
             return(
                 <TabBarNav 
                     key={props.label} 
@@ -59,7 +59,7 @@ const TabBar = ({
                 <span className="tab-bar__indicator" style={tabBarIndicatorStyles}></span>
             </div>
             {
-                React.Children.map(children, (child : JSX.Element) => {
+                React.Children.map(children, (child: JSX.Element) => {
                     return React.cloneElement(child, {
                         activeTab
                     })
